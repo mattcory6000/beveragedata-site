@@ -1,0 +1,288 @@
+/* =============================================================
+   Matt Cory — Design System
+   Colors & Typography foundations
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- COLOR ---------------------------------------------------- */
+  /* Warm-neutral paper-and-ink palette. Two accents only.                 */
+
+  /* Paper (backgrounds) */
+  --paper:        #FAF7F2;   /* primary background, warm ivory          */
+  --paper-2:      #F2EEE6;   /* secondary surface, sunken cards         */
+  --paper-3:      #E8E2D6;   /* hairline tint / well                    */
+  --paper-edge:   #DCD4C4;   /* the warmest the bg ever goes            */
+
+  /* Ink (foreground) */
+  --ink:          #1A1A1A;   /* primary text, near-black                */
+  --ink-2:        #3A3733;   /* secondary text                          */
+  --ink-3:        #6B665E;   /* tertiary, captions, meta                */
+  --ink-4:        #9C968A;   /* quaternary, disabled, dividers-strong   */
+
+  /* Borders & rules */
+  --rule:         #E2DCCE;   /* default 1px rules                       */
+  --rule-strong:  #C9C0AD;   /* emphasis rules                          */
+
+  /* Accent — deep oxblood. Used sparingly: links, focus, marks. */
+  --accent:        #7A2E2A;
+  --accent-hover:  #5C201D;
+  --accent-tint:   #F0E2DF;  /* faint wash for selected states          */
+
+  /* Semantic — quiet, no rainbow */
+  --success: #4A6B3A;
+  --warn:    #8C5A1F;
+  --danger:  var(--accent);
+
+  /* Aliases used semantically */
+  --bg:       var(--paper);
+  --bg-sunk:  var(--paper-2);
+  --fg:       var(--ink);
+  --fg-muted: var(--ink-3);
+  --link:     var(--accent);
+
+  /* ---------- TYPE FAMILIES ------------------------------------------- */
+  --font-serif: 'Source Serif 4', 'Source Serif Pro', 'Iowan Old Style',
+                'Charter', 'Georgia', serif;
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                'Helvetica Neue', sans-serif;
+  --font-mono:  'JetBrains Mono', 'SF Mono', ui-monospace, 'Menlo',
+                'Consolas', monospace;
+
+  /* ---------- TYPE SCALE ---------------------------------------------- */
+  /* Editorial scale — generous, not aggressive. ~1.2 ratio, hand-tuned. */
+  --fs-12: 0.75rem;     /* 12 — micro, eyebrow, code inline      */
+  --fs-13: 0.8125rem;   /* 13 — meta, captions                   */
+  --fs-14: 0.875rem;    /* 14 — small UI                         */
+  --fs-15: 0.9375rem;   /* 15 — secondary body                   */
+  --fs-17: 1.0625rem;   /* 17 — body (primary)                   */
+  --fs-19: 1.1875rem;   /* 19 — large body / lede                */
+  --fs-22: 1.375rem;    /* 22 — h4                               */
+  --fs-26: 1.625rem;    /* 26 — h3                               */
+  --fs-32: 2rem;        /* 32 — h2                               */
+  --fs-44: 2.75rem;     /* 44 — h1                               */
+  --fs-64: 4rem;        /* 64 — display / hero                   */
+  --fs-88: 5.5rem;      /* 88 — title page only                  */
+
+  /* Line heights */
+  --lh-tight: 1.05;
+  --lh-snug:  1.2;
+  --lh-base:  1.5;
+  --lh-prose: 1.65;     /* long-form reading                     */
+
+  /* Tracking */
+  --tr-tight:  -0.02em; /* large display                         */
+  --tr-snug:   -0.01em; /* h1/h2                                 */
+  --tr-normal: 0;
+  --tr-wide:   0.02em;
+  --tr-eyebrow: 0.14em; /* uppercase labels                      */
+
+  /* Weights */
+  --w-light: 300;
+  --w-reg:   400;
+  --w-med:   500;
+  --w-semi:  600;
+  --w-bold:  700;
+
+  /* ---------- SPACING (4px base, generous editorial scale) ------------ */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  /* ---------- LAYOUT --------------------------------------------------- */
+  --measure-prose: 64ch;       /* ideal reading measure                  */
+  --measure-narrow: 48ch;
+  --content-max: 1240px;       /* hard outer max                         */
+  --content-pad: clamp(20px, 5vw, 64px);
+
+  /* ---------- BORDERS / RADIUS / ELEVATION ---------------------------- */
+  --radius-sm: 2px;
+  --radius:    4px;            /* default — restrained                   */
+  --radius-md: 6px;
+  --radius-lg: 10px;           /* never go bigger                        */
+
+  --border:        1px solid var(--rule);
+  --border-strong: 1px solid var(--rule-strong);
+
+  /* Shadows — subtle, single-direction, never floaty */
+  --shadow-1: 0 1px 0 rgba(20, 18, 14, 0.04);
+  --shadow-2: 0 1px 2px rgba(20, 18, 14, 0.06), 0 0 0 1px rgba(20, 18, 14, 0.04);
+  --shadow-3: 0 6px 24px -8px rgba(20, 18, 14, 0.12), 0 0 0 1px rgba(20, 18, 14, 0.05);
+
+  /* ---------- MOTION --------------------------------------------------- */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 120ms;
+  --dur:      200ms;
+  --dur-slow: 360ms;
+}
+
+/* =============================================================
+   Semantic element styles
+   ============================================================= */
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-17);
+  line-height: var(--lh-base);
+  color: var(--fg);
+  background: var(--bg);
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings — editorial serif, tight tracking, snug leading */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+  font-family: var(--font-serif);
+  font-weight: var(--w-reg);
+  color: var(--ink);
+  letter-spacing: var(--tr-snug);
+  line-height: var(--lh-snug);
+  text-wrap: balance;
+  margin: 0;
+}
+
+.display, h1.display {
+  font-size: var(--fs-64);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  font-weight: var(--w-light);
+}
+
+h1, .h1 { font-size: var(--fs-44); font-weight: var(--w-light); }
+h2, .h2 { font-size: var(--fs-32); }
+h3, .h3 { font-size: var(--fs-26); }
+h4, .h4 { font-size: var(--fs-22); }
+
+/* Lede — large body intro, stays sans for cleanliness */
+.lede {
+  font-family: var(--font-sans);
+  font-size: var(--fs-19);
+  line-height: var(--lh-prose);
+  color: var(--ink-2);
+  font-weight: var(--w-reg);
+  max-width: var(--measure-prose);
+  text-wrap: pretty;
+}
+
+p, .body {
+  font-size: var(--fs-17);
+  line-height: var(--lh-prose);
+  color: var(--ink-2);
+  max-width: var(--measure-prose);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.meta, .caption {
+  font-family: var(--font-sans);
+  font-size: var(--fs-13);
+  color: var(--ink-3);
+  letter-spacing: var(--tr-normal);
+  line-height: var(--lh-base);
+}
+
+/* Eyebrow — uppercase tracked label, our most distinctive small mark */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-12);
+  font-weight: var(--w-med);
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* Mono / code */
+code, kbd, samp, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  font-feature-settings: 'ss01', 'ss02', 'zero', 'cv02';
+}
+
+p code, li code {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  padding: 1px 5px;
+  font-size: 0.88em;
+  color: var(--ink);
+}
+
+pre {
+  font-size: var(--fs-14);
+  line-height: 1.6;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--rule-strong);
+  border-radius: var(--radius);
+  padding: var(--s-5);
+  overflow-x: auto;
+  color: var(--ink);
+}
+
+/* Links — accent, animated underline */
+a {
+  color: var(--link);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: color var(--dur) var(--ease),
+              background-size var(--dur) var(--ease);
+}
+a:hover { color: var(--accent-hover); }
+a.quiet {
+  color: var(--ink);
+  background-size: 0 1px;
+}
+a.quiet:hover {
+  color: var(--ink);
+  background-size: 100% 1px;
+}
+
+/* Blockquote — editorial pull */
+blockquote {
+  font-family: var(--font-serif);
+  font-size: var(--fs-22);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  font-style: italic;
+  font-weight: var(--w-light);
+  border-left: 2px solid var(--accent);
+  padding-left: var(--s-5);
+  margin: var(--s-7) 0;
+  max-width: var(--measure-prose);
+}
+
+/* Horizontal rule — hairline */
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--rule);
+  margin: var(--s-7) 0;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-tint);
+  color: var(--accent-hover);
+}
+
+/* Focus — accessible, on-brand */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
