@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -25,6 +26,7 @@ export default function ContactPage() {
       </header>
 
       <section style={{ padding: "var(--s-7) 0 var(--s-9)" }}>
+        <ContactForm />
         <div className="contact-meta">
           <div className="contact-meta-row">
             <span className="lbl">Email</span>
