@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -30,9 +31,11 @@ export default function ContactPage() {
         <div className="contact-meta">
           <div className="contact-meta-row">
             <span className="lbl">Email</span>
-            <a className="link" href="mailto:matt@beveragedata.ai">
-              matt@beveragedata.ai
-            </a>
+            <ObfuscatedEmail
+              className="link"
+              user="matt.cory"
+              domain="beveragedata.ai"
+            />
           </div>
           <div className="contact-meta-row">
             <span className="lbl">Elsewhere</span>
