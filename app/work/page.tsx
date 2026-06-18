@@ -7,7 +7,7 @@ import { getAllCaseStudies } from "@/lib/caseStudies";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Case studies from AI systems, ERP delivery, and enterprise data work — practical architecture designed to hold up in production."
+    "Distributor operations, ERP and data work, and AI tooling — systems designed and shipped for wine and spirits distributors and enterprise clients."
 };
 
 export default function WorkPage() {
@@ -17,14 +17,12 @@ export default function WorkPage() {
     <article className="container">
       <header className="cs-hero">
         <div className="eyebrow" style={{ marginBottom: 24 }}>
-          Work
+          Selected work
         </div>
-        <h1 className="cs-title">
-          Case studies from AI systems, ERP delivery, and enterprise data work.
-        </h1>
+        <h1 className="cs-title">Systems I have designed and shipped.</h1>
         <p className="cs-lede">
-          These projects reflect the operating pattern behind my work — practical architecture,
-          structured delivery, and systems designed to hold up in production environments.
+          Distributor operations, ERP and data work, and AI tooling, built to hold up in
+          production. The judgment behind a retainer comes from work like this.
         </p>
       </header>
 

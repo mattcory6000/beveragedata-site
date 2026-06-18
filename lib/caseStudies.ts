@@ -18,12 +18,14 @@ export type CaseStudy = {
 const caseStudiesDirectory = path.join(process.cwd(), "content", "case-studies");
 
 const caseStudyOrder = [
-  "fdd-knowledge-base",
-  "artifact-engine",
-  "plume-ridge-migration",
   "distributor-erp",
-  "supplier-price-normalization"
+  "supplier-price-normalization",
+  "artifact-engine",
+  "fdd-knowledge-base",
+  "plume-ridge-migration"
 ];
+
+const featuredSlugs = ["distributor-erp", "supplier-price-normalization", "artifact-engine"];
 
 const caseStudyMeta: Record<string, { meta: string; summary: string }> = {
   "fdd-knowledge-base": {
@@ -135,6 +137,12 @@ export function getAllCaseStudies(): CaseStudy[] {
     .sort((left, right) => {
       return caseStudyOrder.indexOf(left.slug) - caseStudyOrder.indexOf(right.slug);
     });
+}
+
+export function getFeaturedCaseStudies(): CaseStudy[] {
+  return featuredSlugs
+    .map((slug) => getCaseStudy(slug))
+    .filter((cs): cs is CaseStudy => cs !== null);
 }
 
 export function getCaseStudy(slug: string): CaseStudy | null {
