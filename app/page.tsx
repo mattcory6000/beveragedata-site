@@ -78,31 +78,45 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container">
-          <div className="section-head">
+          <div className="section-body-grid">
+            {/* Left rail */}
             <div className="eyebrow">Selected work</div>
+
+            {/* Content column */}
             <div>
               <h2 className="section-title">Selected work</h2>
               <p className="lede" style={{ marginTop: 24 }}>
                 These are systems I designed and shipped. The advice I give comes from building
                 things like these.
               </p>
+
+              {/* Bracketed group: left rule ties the rows to "Selected work" */}
+              <div
+                style={{
+                  marginTop: "var(--s-7)",
+                  borderLeft: "1px solid var(--rule)",
+                  paddingLeft: "var(--s-6)"
+                }}
+              >
+                {/* Offset the work-row's negative left margin so rows don't cross the rule */}
+                <div className="work-list" style={{ marginLeft: "var(--s-4)" }}>
+                  {featuredCaseStudies.map((caseStudy) => (
+                    <WorkRow
+                      key={caseStudy.slug}
+                      meta={caseStudy.meta}
+                      title={caseStudy.title}
+                      summary={caseStudy.summary}
+                      href={`/work/${caseStudy.slug}` as Route}
+                    />
+                  ))}
+                </div>
+                <div style={{ marginTop: "var(--s-6)" }}>
+                  <Link href={"/work" as Route} className="link">
+                    See more work →
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="work-list">
-            {featuredCaseStudies.map((caseStudy) => (
-              <WorkRow
-                key={caseStudy.slug}
-                meta={caseStudy.meta}
-                title={caseStudy.title}
-                summary={caseStudy.summary}
-                href={`/work/${caseStudy.slug}` as Route}
-              />
-            ))}
-          </div>
-          <div style={{ marginTop: "var(--s-6)" }}>
-            <Link href={"/work" as Route} className="link">
-              See more work →
-            </Link>
           </div>
         </div>
       </section>

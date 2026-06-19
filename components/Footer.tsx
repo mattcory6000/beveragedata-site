@@ -8,10 +8,40 @@ export function Footer() {
 
   return (
     <footer className="footer">
-      <Owl aria-hidden="true" className="footer-owl" />
       <div className="container footer-inner">
         <div>
-          <div className="footer-wordmark">Matt Cory</div>
+          {/*
+            Owl-as-M dial-in levers — adjust these three values to tune the M:
+              --owl-m-size:    owl height/width relative to font-size (cap height ≈ 0.72em)
+              --owl-m-nudge:   vertical shift in em; positive moves owl down toward baseline
+              --owl-m-bearing: right margin between owl and "att"
+          */}
+          <div
+            className="footer-wordmark"
+            style={
+              {
+                "--owl-m-size": "0.9em",
+                "--owl-m-nudge": "0.08em",
+                "--owl-m-bearing": "0.04em"
+              } as React.CSSProperties
+            }
+          >
+            <span className="sr-only">M</span>
+            <span
+              aria-hidden="true"
+              style={{
+                display: "inline-block",
+                width: "var(--owl-m-size)",
+                height: "var(--owl-m-size)",
+                verticalAlign: "baseline",
+                transform: "translateY(var(--owl-m-nudge))",
+                marginRight: "var(--owl-m-bearing)"
+              }}
+            >
+              <Owl aria-hidden="true" />
+            </span>
+            att Cory
+          </div>
           <div className="footer-meta">Principal Architect — AI-enabled enterprise systems</div>
           <div className="footer-meta" style={{ marginTop: 4 }}>
             &copy; {year}. Set in Source Serif 4 &amp; Inter.
