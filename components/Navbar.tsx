@@ -4,6 +4,8 @@ import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { Owl } from "@/components/Owl";
+
 const navLinks = [
   { href: "/work", label: "Work", match: (p: string) => p === "/work" || p.startsWith("/work/") },
   { href: "/about", label: "About", match: (p: string) => p === "/about" }
@@ -15,8 +17,8 @@ export function Navbar() {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <Link href="/" className="nav-mark" aria-label="Matt Cory — home">
-          MC
+        <Link href="/" className="nav-mark" aria-label="Home">
+          <Owl aria-hidden="true" />
         </Link>
         <nav className="nav-links">
           {navLinks.map((link) => {

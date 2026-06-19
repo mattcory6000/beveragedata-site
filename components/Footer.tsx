@@ -1,11 +1,14 @@
 import type { Route } from "next";
 import Link from "next/link";
 
+import { Owl } from "@/components/Owl";
+
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="footer">
+      <Owl aria-hidden="true" className="footer-owl" />
       <div className="container footer-inner">
         <div>
           <div className="footer-wordmark">Matt Cory</div>

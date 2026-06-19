@@ -6,6 +6,10 @@ import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://beveragedata.ai"),
+  icons: {
+    icon: "/owl.svg"
+    // apple-touch-icon PNGs can be added in a later pass
+  },
   title: {
     default: "Matt Cory",
     template: "%s | Matt Cory"

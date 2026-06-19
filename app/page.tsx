@@ -8,17 +8,14 @@ import { getFeaturedCaseStudies } from "@/lib/caseStudies";
 
 const pillars = [
   {
-    number: "01",
     title: "I have sat in your chair.",
     body: "I co-founded a wine distributorship and built the operating system that ran it: order entry, inventory, landed cost, depletion allowances, supplier billbacks. It ran the business for a decade and still runs today. I understand distributor operations from the inside."
   },
   {
-    number: "02",
     title: "Judgment, not hype.",
     body: "The hard technology questions for a distributor are usually build-vs-buy, vendor strategy, and where AI is worth the spend. I give you a straight read, including when the answer is to do nothing or to stop paying for something."
   },
   {
-    number: "03",
     title: "I build, not just advise.",
     body: "When something needs to be built — a report, an integration, an agent, a tool — I can architect and ship it, or scope and supervise it. The case studies below are systems I designed and shipped."
   }
@@ -41,16 +38,21 @@ export default function HomePage() {
             }}
           >
             {pillars.map((pillar) => (
-              <div key={pillar.number}>
+              <div key={pillar.title}>
                 <div
-                  className="eyebrow"
                   style={{
                     paddingTop: "var(--s-5)",
                     borderTop: "1px solid var(--rule)",
                     marginBottom: "var(--s-4)"
                   }}
                 >
-                  {pillar.number}
+                  <div
+                    style={{
+                      width: 32,
+                      height: 2,
+                      background: "var(--accent)"
+                    }}
+                  />
                 </div>
                 <div
                   style={{
@@ -60,12 +62,12 @@ export default function HomePage() {
                     letterSpacing: "-0.01em",
                     lineHeight: "var(--lh-snug)",
                     color: "var(--ink)",
-                    marginBottom: "var(--s-4)"
+                    marginBottom: "var(--s-3)"
                   }}
                 >
                   {pillar.title}
                 </div>
-                <p style={{ maxWidth: "none" }}>{pillar.body}</p>
+                <p style={{ maxWidth: "36ch" }}>{pillar.body}</p>
               </div>
             ))}
           </div>
