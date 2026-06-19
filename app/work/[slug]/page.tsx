@@ -63,6 +63,22 @@ function MarkdownLite({ content }: { content: string }) {
           );
         }
 
+        if (/^\d+\.\s/.test(block)) {
+          const items = block
+            .split("\n")
+            .map((line) => line.trim())
+            .filter((line) => /^\d+\.\s/.test(line))
+            .map((line) => line.replace(/^\d+\.\s+/, ""));
+
+          return (
+            <ol className="cs-list" key={index}>
+              {items.map((item, itemIndex) => (
+                <li key={itemIndex}>{item}</li>
+              ))}
+            </ol>
+          );
+        }
+
         return <p key={index}>{block}</p>;
       })}
     </div>

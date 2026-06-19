@@ -20,14 +20,26 @@ const caseStudiesDirectory = path.join(process.cwd(), "content", "case-studies")
 const caseStudyOrder = [
   "distributor-erp",
   "supplier-price-normalization",
+  "customer-specific-erp-knowledge-agent",
+  "multi-state-beverage-tax-compliance-automation",
   "artifact-engine",
   "fdd-knowledge-base",
   "plume-ridge-migration"
 ];
 
-const featuredSlugs = ["distributor-erp", "supplier-price-normalization", "artifact-engine"];
+const featuredSlugs = ["distributor-erp", "supplier-price-normalization", "customer-specific-erp-knowledge-agent"];
 
 const caseStudyMeta: Record<string, { meta: string; summary: string }> = {
+  "customer-specific-erp-knowledge-agent": {
+    meta: "AI DELIVERY TOOLING",
+    summary:
+      "An ERP support agent that answered across the platform, the wine vertical, a customer's own customizations, and third-party extensions from one interface, built on documentation hardened against the source code."
+  },
+  "multi-state-beverage-tax-compliance-automation": {
+    meta: "COMPLIANCE AUTOMATION",
+    summary:
+      "A wine and spirits importer was migrating off a legacy ERP that generated its monthly state gallonage tax filings, with no equivalent on Business Central. I built the classification and reporting system that produces all 41 state filings from Business Central data, in every format the states require including filled PDFs."
+  },
   "fdd-knowledge-base": {
     meta: "KNOWLEDGE INFRASTRUCTURE",
     summary:

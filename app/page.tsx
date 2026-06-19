@@ -99,7 +99,7 @@ export default function HomePage() {
           </div>
           <div style={{ marginTop: "var(--s-6)" }}>
             <Link href={"/work" as Route} className="link">
-              See all work →
+              See more work →
             </Link>
           </div>
         </div>
