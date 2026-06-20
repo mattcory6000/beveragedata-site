@@ -526,8 +526,6 @@ hr {
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-owl { animation: none; }
-  .work-row { transition: none; }
-  .work-row:hover { transform: none; }
   .tier-card { transition: border-color var(--dur) var(--ease); }
   .tier-card:hover { transform: none; box-shadow: none; }
 }
@@ -565,12 +563,11 @@ hr {
   text-decoration: none;
   color: inherit;
   background-image: none;
-  transition: transform var(--dur) var(--ease);
   cursor: pointer;
   margin: 0 calc(-1 * var(--s-4));
   border-radius: 2px;
 }
-.work-row:hover { background: transparent; transform: translateX(4px); }
+.work-row:hover { background: transparent; }
 .work-row:hover .work-title { color: var(--accent); }
 .work-row:hover .work-arrow { transform: translateX(4px); color: var(--accent); }
 .work-row:last-child { border-bottom: 1px solid var(--rule); }
@@ -848,9 +845,9 @@ hr {
   transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .tier-card:hover {
-  border-color: var(--rule-strong);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-2);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-3);
 }
 
 /* ---------- RESPONSIVE ---------- */
