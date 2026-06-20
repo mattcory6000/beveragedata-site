@@ -18,16 +18,20 @@ export type CaseStudy = {
 const caseStudiesDirectory = path.join(process.cwd(), "content", "case-studies");
 
 const caseStudyOrder = [
+  "multi-state-beverage-tax-compliance-automation",
+  "customer-specific-erp-knowledge-agent",
   "distributor-erp",
   "supplier-price-normalization",
-  "customer-specific-erp-knowledge-agent",
-  "multi-state-beverage-tax-compliance-automation",
   "artifact-engine",
   "fdd-knowledge-base",
   "plume-ridge-migration"
 ];
 
-const featuredSlugs = ["distributor-erp", "supplier-price-normalization", "customer-specific-erp-knowledge-agent"];
+const featuredSlugs = [
+  "multi-state-beverage-tax-compliance-automation",
+  "customer-specific-erp-knowledge-agent",
+  "distributor-erp"
+];
 
 const caseStudyMeta: Record<string, { meta: string; summary: string }> = {
   "customer-specific-erp-knowledge-agent": {

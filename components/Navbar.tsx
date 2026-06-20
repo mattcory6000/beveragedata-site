@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Owl } from "@/components/Owl";
 
 const navLinks = [
+  { href: "/", label: "Home", match: (p: string) => p === "/" },
   { href: "/work", label: "Work", match: (p: string) => p === "/work" || p.startsWith("/work/") },
   { href: "/about", label: "About", match: (p: string) => p === "/about" }
 ] as const satisfies ReadonlyArray<{ href: Route; label: string; match: (path: string) => boolean }>;

@@ -20,8 +20,8 @@ export function Footer() {
             className="footer-wordmark"
             style={
               {
-                "--owl-m-size": "0.9em",
-                "--owl-m-nudge": "0.08em",
+                "--owl-m-size": "1.02em",
+                "--owl-m-nudge": "0.14em",
                 "--owl-m-bearing": "0.04em"
               } as React.CSSProperties
             }
@@ -35,7 +35,8 @@ export function Footer() {
                 height: "var(--owl-m-size)",
                 verticalAlign: "baseline",
                 transform: "translateY(var(--owl-m-nudge))",
-                marginRight: "var(--owl-m-bearing)"
+                marginRight: "var(--owl-m-bearing)",
+                opacity: 0.9
               }}
             >
               <Owl aria-hidden="true" />

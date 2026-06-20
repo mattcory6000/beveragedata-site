@@ -29,10 +29,10 @@
   --rule:         #E6E6E3;
   --rule-strong:  #C7C7C2;
 
-  /* Accent — steel blue */
-  --accent:        #2C4A5E;
-  --accent-hover:  #21384A;
-  --accent-tint:   #E3EAEF;
+  /* Accent — mid blue */
+  --accent:        #3A7CA0;
+  --accent-hover:  #2E647F;
+  --accent-tint:   #E4EEF3;
 
   /* Semantic — quiet, no rainbow */
   --success: #4A6B3A;
@@ -330,11 +330,12 @@ hr {
   width: 32px;
   height: 32px;
   color: var(--ink);
-  transition: color var(--dur) var(--ease);
+  transition: color var(--dur) var(--ease), transform var(--dur) var(--ease);
   text-decoration: none;
   background-image: none;
 }
-.nav-mark:hover { color: var(--accent); }
+.nav-mark:hover { color: var(--accent); transform: scale(1.06); }
+.nav-mark:focus-visible { color: var(--accent); }
 .nav-links {
   display: flex;
   gap: var(--s-6);
@@ -525,6 +526,10 @@ hr {
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-owl { animation: none; }
+  .work-row { transition: none; }
+  .work-row:hover { transform: none; }
+  .tier-card { transition: border-color var(--dur) var(--ease); }
+  .tier-card:hover { transform: none; box-shadow: none; }
 }
 
 /* ---------- SECTIONS ---------- */
@@ -560,12 +565,12 @@ hr {
   text-decoration: none;
   color: inherit;
   background-image: none;
-  transition: none;
+  transition: transform var(--dur) var(--ease);
   cursor: pointer;
   margin: 0 calc(-1 * var(--s-4));
   border-radius: 2px;
 }
-.work-row:hover { background: transparent; }
+.work-row:hover { background: transparent; transform: translateX(4px); }
 .work-row:hover .work-title { color: var(--accent); }
 .work-row:hover .work-arrow { transform: translateX(4px); color: var(--accent); }
 .work-row:last-child { border-bottom: 1px solid var(--rule); }
@@ -835,6 +840,17 @@ hr {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--s-5);
+}
+.tier-card {
+  padding: var(--s-5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--rule);
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.tier-card:hover {
+  border-color: var(--rule-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
 }
 
 /* ---------- RESPONSIVE ---------- */

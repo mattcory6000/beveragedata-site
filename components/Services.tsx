@@ -103,22 +103,7 @@ export function Services() {
                 <div className="eyebrow" style={{ marginBottom: "var(--s-5)" }}>Ongoing</div>
                 <div className="services-tiers">
                   {tiers.map((tier) => (
-                    <div
-                      key={tier.name}
-                      style={{
-                        padding: "var(--s-5)",
-                        borderRadius: "var(--radius-md)",
-                        border: "1px solid var(--rule)"
-                      }}
-                    >
-                      {tier.anchor && (
-                        <div
-                          className="eyebrow"
-                          style={{ color: "var(--accent)", marginBottom: "var(--s-3)" }}
-                        >
-                          Most distributors
-                        </div>
-                      )}
+                    <div key={tier.name} className="tier-card">
                       <div
                         style={{
                           display: "flex",

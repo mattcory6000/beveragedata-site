@@ -18,9 +18,9 @@ const config: Config = {
         "ink-4": "#97989E",
         rule: "#E6E6E3",
         "rule-strong": "#C7C7C2",
-        accent: "#2C4A5E",
-        "accent-hover": "#21384A",
-        "accent-tint": "#E3EAEF"
+        accent: "#3A7CA0",
+        "accent-hover": "#2E647F",
+        "accent-tint": "#E4EEF3"
       },
       fontFamily: {
         serif: [
