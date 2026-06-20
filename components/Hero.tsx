@@ -21,7 +21,7 @@ export function Hero() {
         rafId = null;
         if (!heroRef.current || !owlWrapRef.current) return;
         const rect = heroRef.current.getBoundingClientRect();
-        const progress = Math.min(1, Math.max(0, -rect.top / (rect.height * 0.55)));
+        const progress = Math.min(1, Math.max(0, -rect.top / (rect.height * 0.35)));
         owlWrapRef.current.style.setProperty("--owl-scroll", String(progress));
       });
     }
