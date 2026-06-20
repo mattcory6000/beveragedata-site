@@ -516,6 +516,9 @@ hr {
   width: clamp(180px, 22vw, 320px);
   height: clamp(180px, 22vw, 320px);
   color: var(--ink);
+  opacity: calc(1 - var(--owl-scroll, 0));
+  transform: translateY(calc(var(--owl-scroll, 0) * -24px));
+  will-change: opacity, transform;
 }
 @keyframes owl-reveal {
   from { opacity: 0; transform: translateY(12px); }

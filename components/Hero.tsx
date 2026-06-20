@@ -1,11 +1,40 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import type { Route } from "next";
 import Link from "next/link";
 
 import { Owl } from "@/components/Owl";
 
 export function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+  const owlWrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let rafId: number | null = null;
+
+    function onScroll() {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        if (!heroRef.current || !owlWrapRef.current) return;
+        const rect = heroRef.current.getBoundingClientRect();
+        const progress = Math.min(1, Math.max(0, -rect.top / (rect.height * 0.55)));
+        owlWrapRef.current.style.setProperty("--owl-scroll", String(progress));
+      });
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
+  }, []);
+
   return (
-    <section className="hero">
+    <section className="hero" ref={heroRef}>
       <div className="container">
         <div className="hero-layout">
           <div className="hero-copy">
@@ -29,7 +58,7 @@ export function Hero() {
             </div>
           </div>
           <div className="hero-owl-col">
-            <div className="hero-owl-wrap">
+            <div className="hero-owl-wrap" ref={owlWrapRef}>
               <Owl className="hero-owl" aria-hidden="true" />
             </div>
           </div>
